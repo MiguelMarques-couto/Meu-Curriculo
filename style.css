@@ -2,7 +2,7 @@
 
 * {
   margin: 0;
-  padding: 0;
+  
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
@@ -467,5 +467,75 @@ justify-content: center;
   flex-direction: row;
 }
 
+.project-card {
+  position: relative;
+  overflow: visible; 
+}
 
 
+.project-button {
+  position: absolute;
+  bottom: -22px; 
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0; 
+}
+
+.conhecimentos{
+  text-align: center;
+  
+}
+
+.conhecimentos h2{
+  font-size: 40px;
+  margin-top: 100px;
+}
+
+.cart {
+  border: 1px solid rgba(47, 185, 245, 0.39);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.08);
+  border-radius: 999px;
+  padding: 8px 20px;
+  align-items: center;
+  background-color: #0f1b3d;
+  color: #0ea5e9;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.cart:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.4), 0 0 50px rgba(56, 189, 248, 0.15);
+}
+.cart h3 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.conhecimento-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 40px;
+  max-width: 900px;
+  margin: 20px auto;
+  
+  margin-bottom: 100px;
+}
+
+#knowledge {
+  border: 1px solid rgba(47, 185, 245, 0.39);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.08);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: #0f1b3d;
+  color: #0ea5e9;
+  font-size: 22px;
+  margin: 10px;
+}
