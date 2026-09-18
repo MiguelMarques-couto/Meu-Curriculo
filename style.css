@@ -539,3 +539,634 @@ justify-content: center;
   font-size: 22px;
   margin: 10px;
 }
+
+
+/* ============================================================
+   ADIÇÕES: tema claro/escuro, formulário de contato e
+   responsividade mobile. Nada acima desta linha foi alterado.
+   ============================================================ */
+
+
+/* ---------- Header: logo + nav + ações ---------- */
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* ---------- Switch de tema ---------- */
+
+.theme-switch-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-icon {
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.theme-icon:hover {
+  transform: none;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.theme-slider {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.theme-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #38bdf8;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.theme-switch input:checked + .theme-slider::before {
+  transform: translate(22px, -50%);
+}
+
+.theme-switch input:focus-visible + .theme-slider {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+
+/* ---------- Botão do menu mobile ---------- */
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 10px;
+  padding: 7px 11px;
+  line-height: 1;
+}
+
+.menu-toggle i {
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.menu-toggle:hover {
+  background: rgba(56, 189, 248, 0.15);
+}
+
+
+/* ---------- Formulário de contato ---------- */
+
+.form-wrapper {
+  background-color: #0b19477e;
+  border-radius: 30px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.contato-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 260px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #38bdf8;
+  margin-bottom: 7px;
+}
+
+.contato-form input,
+.contato-form select,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background-color: rgba(2, 6, 23, 0.7);
+  color: #e5e7eb;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s;
+}
+
+.contato-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contato-form input::placeholder,
+.contato-form textarea::placeholder {
+  color: #7b8794;
+}
+
+.contato-form input:focus,
+.contato-form select:focus,
+.contato-form textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.contato-form input.invalido,
+.contato-form select.invalido,
+.contato-form textarea.invalido {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.12);
+}
+
+.form-error {
+  color: #f87171;
+  font-size: 12px;
+  min-height: 16px;
+  margin-top: 5px;
+}
+
+.form-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.contador {
+  font-size: 12px;
+  color: #7b8794;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.form-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #38bdf8;
+}
+
+.btn-secundario:hover {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #ffffff;
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.form-status.sucesso {
+  color: #4ade80;
+}
+
+.form-status.erro {
+  color: #f87171;
+}
+
+
+/* ============================================================
+   MODO CLARO
+   ============================================================ */
+
+body,
+header,
+.card,
+.project-card,
+.informacoes,
+.form-wrapper,
+.cart,
+.span,
+.contato-form input,
+.contato-form select,
+.contato-form textarea {
+  transition: background 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode {
+  background: radial-gradient(circle at top, #ffffff 0%, #e8eef6 70%);
+  color: #111827;
+}
+
+body.light-mode header {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 2px 14px rgba(15, 27, 61, 0.08);
+}
+
+body.light-mode a {
+  color: #0369a1;
+}
+
+body.light-mode a:hover {
+  color: #0c4a6e;
+}
+
+body.light-mode .logo {
+  color: #111827;
+}
+
+body.light-mode .name,
+body.light-mode .educacao h2,
+body.light-mode .projetos h2,
+body.light-mode .conhecimentos h2,
+body.light-mode .contato h2,
+body.light-mode .card h3 {
+  color: #111827;
+}
+
+body.light-mode .description,
+body.light-mode .card p,
+body.light-mode .informacoes p,
+body.light-mode .disp p {
+  color: #374151;
+}
+
+body.light-mode .intro,
+body.light-mode .role,
+body.light-mode .subtitulo,
+body.light-mode .instituicao,
+body.light-mode .project-title,
+body.light-mode .form-group label {
+  color: #0369a1;
+}
+
+body.light-mode .project-description {
+  color: #4b5563;
+}
+
+body.light-mode .card,
+body.light-mode .project-card {
+  background: #ffffff;
+  border: 1px solid rgba(3, 105, 161, 0.18);
+  box-shadow: 0 10px 30px rgba(15, 27, 61, 0.08);
+}
+
+body.light-mode .informacoes,
+body.light-mode .form-wrapper {
+  background-color: #ffffff;
+  border: 1px solid rgba(3, 105, 161, 0.18);
+  box-shadow: 0 10px 30px rgba(15, 27, 61, 0.06);
+}
+
+body.light-mode .cart,
+body.light-mode .span,
+body.light-mode #knowledge {
+  background-color: #eef6fd;
+  color: #0369a1;
+  border: 1px solid rgba(3, 105, 161, 0.25);
+}
+
+body.light-mode i {
+  color: #0369a1;
+}
+
+body.light-mode i:hover {
+  color: #0c4a6e;
+}
+
+body.light-mode .data,
+body.light-mode .format {
+  background: rgba(3, 105, 161, 0.12);
+  color: #0369a1;
+}
+
+body.light-mode .timeline {
+  border-left-color: #0ea5e9;
+}
+
+body.light-mode .section-divider {
+  background-color: #0ea5e9;
+}
+
+body.light-mode button {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+body.light-mode button:hover {
+  background-color: #0369a1;
+  color: #ffffff;
+}
+
+body.light-mode .menu-toggle,
+body.light-mode .btn-secundario {
+  background-color: transparent;
+  color: #0369a1;
+  border: 1px solid rgba(3, 105, 161, 0.4);
+}
+
+body.light-mode .menu-toggle:hover,
+body.light-mode .btn-secundario:hover {
+  background-color: rgba(3, 105, 161, 0.1);
+  color: #0c4a6e;
+}
+
+body.light-mode .theme-slider {
+  background-color: rgba(3, 105, 161, 0.15);
+  border-color: rgba(3, 105, 161, 0.4);
+}
+
+body.light-mode .theme-slider::before {
+  background-color: #0284c7;
+}
+
+body.light-mode .contato-form input,
+body.light-mode .contato-form select,
+body.light-mode .contato-form textarea {
+  background-color: #f8fafc;
+  color: #111827;
+  border-color: rgba(3, 105, 161, 0.25);
+}
+
+body.light-mode .contato-form input::placeholder,
+body.light-mode .contato-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+body.light-mode .contador {
+  color: #6b7280;
+}
+
+body.light-mode ::-webkit-scrollbar-track {
+  background: #e8eef6;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background-color: #b6c3d4;
+  border-color: #e8eef6;
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE MOBILE
+   ============================================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    padding-left: 60px;
+  }
+
+  .nav-list li {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 860px) {
+  header {
+    padding: 14px 16px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-list.aberto {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    background: rgba(2, 6, 23, 0.97);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(56, 189, 248, 0.2);
+  }
+
+  body.light-mode .nav-list.aberto {
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(3, 105, 161, 0.2);
+  }
+
+  .nav-list.aberto li {
+    display: block;
+    padding: 12px 22px;
+    transform: none;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .projects-container {
+    margin-top: 40px;
+    gap: 50px;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 415px;
+    height: auto;
+    padding: 40px 28px 50px;
+  }
+
+  .educacao h2,
+  .projetos h2,
+  .conhecimentos h2,
+  .contato h2 {
+    font-size: 28px;
+  }
+
+  .conhecimentos h2 {
+    margin-top: 50px;
+  }
+
+  .conhecimento-grid {
+    padding: 20px 10px;
+    margin-bottom: 50px;
+  }
+
+  .informacoes,
+  .form-wrapper {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .informacoes a {
+    display: inline-block;
+    word-break: break-word;
+  }
+
+  #gmal {
+    margin: 10px 8px 10px 0;
+  }
+
+  #info {
+    margin: 18px 0;
+  }
+
+  .form-row {
+    gap: 0;
+  }
+
+  .form-group {
+    flex: 1 1 100%;
+  }
+
+  .form-actions button {
+    flex: 1 1 100%;
+  }
+
+  li, a, button {
+    font-size: 12px;
+  }
+
+  .contato-form input,
+  .contato-form select,
+  .contato-form textarea,
+  .form-group label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  header {
+    padding: 12px 14px;
+  }
+
+  .logo {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .theme-switch {
+    width: 42px;
+    height: 23px;
+  }
+
+  .theme-slider::before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .theme-switch input:checked + .theme-slider::before {
+    transform: translate(19px, -50%);
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .role {
+    font-size: 18px;
+  }
+
+  .hello {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .educacao {
+    padding: 30px 14px;
+  }
+
+  .timeline {
+    padding-left: 16px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .project-card {
+    padding: 30px 20px 45px;
+  }
+
+  .project-techs {
+    flex-wrap: wrap;
+  }
+
+  .format {
+    margin: 8px 6px;
+  }
+
+  .projetos,
+  .contato {
+    padding: 30px 14px;
+  }
+
+  .section-divider {
+    width: 92%;
+  }
+}
